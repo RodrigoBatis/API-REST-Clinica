@@ -6,11 +6,13 @@ const pacienteModel = require("../model/pacienteModel")
 const router = express.Router();
 
 router.post('/cadastrarPaciente', (req, res)=>{
-
+   //console.log(req.body);
    let {nome_paciente, telefone_paciente, celular_paciente, email_paciente, nome_responsavel, telefone_responsavel } = req.body;
 
+   
    if(nome_paciente !== null && telefone_paciente !== null && celular_paciente !== null && email_paciente !== null)
    {
+      console.log(nome_responsavel, telefone_responsavel)
       if(Number(telefone_paciente) && Number(celular_paciente)){
          try {
             pacienteModel.create({
@@ -35,7 +37,7 @@ router.post('/cadastrarPaciente', (req, res)=>{
          })
          }
       }else{
-         res.status(400).json({ error: "Só permetido inserir numeros"});
+         res.status(400).json({ error: "Só é possível inserir numeros"});
       }
    }else{
       res.status(400).json({ error: "Existem campos obrigatórios que devem ser preenchidos" });

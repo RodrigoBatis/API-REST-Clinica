@@ -12,27 +12,27 @@ const pacienteModel = connection.define(
       },
       nome_paciente:{
          type: Sequelize.STRING(500),
-         allowNull:true
+         allowNull:false
       },
       telefone_paciente:{
          type: Sequelize.STRING(10),
-         allowNull:true
+         allowNull:false
       },
       celular_paciente:{
          type: Sequelize.STRING(11),
-         allowNull:true
+         allowNull:false
       },
       email_paciente:{
          type: Sequelize.STRING(100),
-         allowNull:true
+         allowNull:false
       },
       nome_responsavel:{
          type: Sequelize.STRING(500),
-         allowNull:false
+         allowNull:true
       },
       telefone_responsavel:{
          type: Sequelize.STRING(10),
-         allowNull:false
+         allowNull:true
       }
    }
 );
